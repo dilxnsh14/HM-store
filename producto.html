@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto — HM Boutique</title>
+  <meta name="description" content="HM Boutique — Detalle del producto.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Hanken+Grotesk:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/product-detail.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Cinta de anuncio -->
+  <div class="announce" id="announce" hidden>
+    <a class="announce__link" id="announce-link" href="#">
+      <span class="announce__track" id="announce-track" aria-hidden="true"></span>
+      <span class="sr-only" id="announce-text"></span>
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="nav__link" href="index.html">Inicio</a>
+      <a class="nav__link" href="index.html#coleccion">Colección</a>
+    </nav>
+    <a href="index.html" class="site-header__logo" aria-label="HM Boutique, inicio">
+      <img src="assets/brand/logo-hm-boutique-recortado.png" alt="HM Boutique" width="366" height="295">
+    </a>
+  </header>
+
+  <main id="contenido">
+    <!-- Migas de pan -->
+    <nav class="breadcrumbs" aria-label="Navegación actual">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#coleccion" id="breadcrumb-collection">Colección</a></li>
+        <li><span id="breadcrumb-product" aria-current="page">Producto</span></li>
+      </ol>
+    </nav>
+
+    <!-- Detalle del Producto -->
+    <article class="product-detail" id="product-detail">
+      <div class="container">
+        <!-- Error si no carga el producto -->
+        <div id="product-error" class="notice notice--error" role="alert" hidden>
+          <div>
+            <span class="notice__title">Producto no encontrado</span>
+            <p>Lo sentimos, no pudimos cargar este producto. <a href="index.html#coleccion">Volver a la colección</a>.</p>
+          </div>
+        </div>
+
+        <!-- Contenido del producto -->
+        <div id="product-content" class="product-content">
+          <!-- Galería de fotos -->
+          <aside class="product-gallery" aria-label="Galería del producto">
+            <div class="gallery-main">
+              <img class="gallery-main__image" id="gallery-main-image" src="" alt="" loading="eager">
+              <span class="gallery-main__badge" id="gallery-provisional-badge" hidden>Provisional</span>
+            </div>
+            <div class="gallery-thumbs" role="tablist" aria-label="Seleccionar imagen">
+              <div id="gallery-thumbs-container"></div>
+            </div>
+          </aside>
+
+          <!-- Información del producto -->
+          <section class="product-info" aria-labelledby="product-title">
+            <!-- Etiqueta provisional -->
+            <div id="product-provisional-notice" class="notice notice--info" role="note" hidden>
+              <div>
+                <span class="notice__title">Información provisional</span>
+                <p>Los precios, tallas y disponibilidad están pendientes de confirmación por HM.</p>
+              </div>
+            </div>
+
+            <!-- Título y marca -->
+            <div class="product-info__header">
+              <h1 class="product-info__title" id="product-title"></h1>
+              <p class="product-info__sku" id="product-sku"></p>
+            </div>
+
+            <!-- Precio -->
+            <div class="product-info__price">
+              <span class="price" id="product-price" data-price="null">Precio no disponible</span>
+            </div>
+
+            <!-- Descripción -->
+            <p class="product-info__description" id="product-description"></p>
+
+            <!-- Selector de color (si aplica) -->
+            <div class="product-selector" id="color-selector-container" hidden>
+              <label for="color-selector" class="product-selector__label">Color:</label>
+              <fieldset class="product-selector__options" id="color-selector">
+                <legend class="sr-only">Colores disponibles</legend>
+              </fieldset>
+            </div>
+
+            <!-- Selector de talla -->
+            <div class="product-selector">
+              <label for="size-selector" class="product-selector__label">Talla:</label>
+              <fieldset class="product-selector__options" id="size-selector">
+                <legend class="sr-only">Tallas disponibles</legend>
+              </fieldset>
+            </div>
+
+            <!-- Stock status -->
+            <div id="stock-status" class="product-info__stock" role="status" aria-live="polite"></div>
+
+            <!-- Cantidad -->
+            <div class="product-selector">
+              <label for="quantity-input" class="product-selector__label">Cantidad:</label>
+              <input
+                type="number"
+                id="quantity-input"
+                class="product-selector__quantity"
+                min="1"
+                max="10"
+                value="1"
+                aria-label="Cantidad de producto"
+              >
+            </div>
+
+            <!-- Botón: Agregar al carrito -->
+            <button class="btn btn--large" id="add-to-cart-btn" type="button" aria-label="Agregar al carrito">
+              <span id="add-to-cart-text">Agregar al carrito</span>
+            </button>
+
+            <!-- Feedback de agregado al carrito -->
+            <div id="add-to-cart-feedback" class="notice notice--success" role="status" hidden>
+              <div>
+                <span class="notice__title">✓ Agregado</span>
+                <p id="add-to-cart-message">1 × producto agregado al carrito.</p>
+              </div>
+            </div>
+
+            <!-- Detalles adicionales -->
+            <div class="product-info__details">
+              <h2 class="sr-only">Información adicional</h2>
+              <dl>
+                <dt>Colección:</dt>
+                <dd id="product-collection"></dd>
+                <dt>Material:</dt>
+                <dd>Pendiente de confirmación por HM</dd>
+                <dt>Cuidados:</dt>
+                <dd>Consultar etiqueta del producto</dd>
+              </dl>
+            </div>
+          </section>
+        </div>
+
+        <!-- Productos relacionados -->
+        <section class="related-products" id="related-products-section" hidden>
+          <h2 class="section-title">Productos relacionados</h2>
+          <div class="product-grid" id="related-products-grid"></div>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <img class="site-footer__logo" src="assets/brand/logo-hm-boutique-recortado.png" alt="HM Boutique" width="366" height="295">
+      <p class="site-footer__note">© HM Boutique</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data/campaigns.js"></script>
+  <script src="data/products.js"></script>
+  <script src="js/product-detail.js"></script>
+</body>
+</html>

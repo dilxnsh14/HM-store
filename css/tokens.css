@@ -1,0 +1,72 @@
+/* HM Store — Design tokens.
+ * Fuente: Paleta_de_Colores_HM_Store.md y Contexto_Real_HM_Store_para_Claude.md.
+ * Rosa #F653BD = aproximación digital tomada del logotipo, NO valor oficial verificado.
+ * No añadir colores de marca sin aprobación de HM. */
+:root {
+  /* Paleta de trabajo seleccionada */
+  --hm-pink: #F653BD;
+  --hm-black: #000000;
+  --hm-white: #FFFFFF;
+  --hm-gray-soft: #F5F3F4;
+  --hm-gray-medium: #777777;
+  --hm-gray-light: #E8E5E7;
+
+  /* Ajuste de accesibilidad (propuesta): gris neutro algo más oscuro para texto pequeño,
+   * porque #777777 sobre blanco da 4.48:1 y sobre gris suave 4.05:1 (<4.5). Pendiente de aprobación. */
+  --hm-text-soft: #666666;
+
+  /* Roles */
+  --color-bg: var(--hm-white);
+  --color-surface: var(--hm-gray-soft);
+  --color-line: var(--hm-gray-light);
+  --color-ui: var(--hm-gray-medium);
+  --color-ink: var(--hm-black);
+  --color-ink-soft: var(--hm-text-soft);
+  --color-accent: var(--hm-pink);
+  --color-focus: var(--hm-black);
+
+  /* Estados: solo con la paleta. El rojo de error es funcional y está pendiente de aprobación. */
+  --err-fg: #b3261e; --err-bg: #fbe9e7;
+
+  /* Tema de campaña del Hero: lo sobrescribe js/hero.js desde data/campaigns.js */
+  --bg: var(--hm-gray-soft);
+  --ink: var(--hm-black);
+  --accent: var(--hm-pink);
+  --paper: var(--hm-white);
+
+  /* Tipografía */
+  --font-display: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-display: clamp(3.25rem, 9vw, 8.25rem);
+  --fs-h2: clamp(2rem, 4.5vw, 3.5rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-product: 1.0625rem;
+  --fs-price: 1rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+  --ls-label: 0.14em;
+
+  /* Espaciado (base 4px) */
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.5rem; --sp-6: 2rem; --sp-7: 3rem; --sp-8: 4rem;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --container: 1280px;
+  --section-y: clamp(4rem, 9vw, 7.5rem);
+  --grid-gap: clamp(1rem, 2.5vw, 2rem);
+
+  /* Forma */
+  --radius-s: 2px;
+  --radius-pill: 999px;
+  --tap: 44px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 160ms;
+  --t-med: 300ms;
+
+  /* Layout */
+  --header-h: 84px;
+  --announce-h: 0px;
+}
+@media (max-width: 900px) { :root { --header-h: 68px; } }

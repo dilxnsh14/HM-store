@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Sistema de diseño — HM Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Hanken+Grotesk:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .sys-sw { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--sp-4); }
+    .sys-sw div { border: 1px solid var(--color-line); border-radius: var(--radius-s); overflow: hidden; font-size: var(--fs-small); }
+    .sys-sw i { display: block; height: 64px; background: var(--c); }
+    .sys-sw b, .sys-sw span { display: block; padding: 0 var(--sp-3); }
+    .sys-sw b { padding-top: var(--sp-2); }
+    .sys-sw span { padding-bottom: var(--sp-2); color: var(--color-ink-soft); }
+    .sys-row { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center; }
+    .sys-block { display: grid; gap: var(--sp-4); margin-bottom: var(--sp-7); }
+    .sys-block > h3 { font-size: var(--fs-label); letter-spacing: var(--ls-label); text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal"><a class="nav__link" href="index.html">Tienda</a></nav>
+    <a href="index.html" class="site-header__logo" aria-label="HM Boutique, inicio"><img src="assets/brand/logo-hm-boutique-recortado.png" alt="HM Boutique" width="366" height="295"></a>
+  </header>
+
+  <main id="contenido">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Guía interna</p>
+          <h1 class="section-head__title">Sistema de diseño</h1>
+          <p class="section-head__text">Página de trabajo, no pública. Todo el contenido de productos es de ejemplo.</p>
+        </div>
+        <div class="notice notice--warning" role="note"><div><span class="notice__title">Contenido de ejemplo</span><p>Nombres, precios y colores de esta página son provisionales. No son productos, precios ni marcas reales de HM. El rosa es una aproximación del logotipo, no un valor oficial.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="s-color">
+      <div class="container">
+        <h2 class="section-head__title" id="s-color" style="margin-bottom:var(--sp-6)">Color</h2>
+        <div class="sys-block"><h3>Paleta de trabajo (rosa = aproximación del logotipo, no oficial)</h3>
+          <div class="sys-sw">
+            <div><i style="--c:#F653BD"></i><b>Rosa HM</b><span>#F653BD</span></div>
+            <div><i style="--c:#000000"></i><b>Negro</b><span>#000000</span></div>
+            <div><i style="--c:#FFFFFF"></i><b>Blanco</b><span>#FFFFFF</span></div>
+            <div><i style="--c:#F5F3F4"></i><b>Gris suave</b><span>#F5F3F4</span></div>
+            <div><i style="--c:#777777"></i><b>Gris medio</b><span>#777777</span></div>
+            <div><i style="--c:#E8E5E7"></i><b>Gris claro</b><span>#E8E5E7</span></div>
+          </div></div>
+        <div class="sys-block"><h3>Ajustes propuestos (pendientes de aprobación)</h3>
+          <div class="sys-sw">
+            <div><i style="--c:#666666"></i><b>Gris texto</b><span>#666666 · texto pequeño</span></div>
+            <div><i style="--c:#b3261e"></i><b>Rojo error</b><span>#b3261e · solo errores</span></div>
+          </div></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s-type">
+      <div class="container">
+        <h2 class="section-head__title" id="s-type" style="margin-bottom:var(--sp-6)">Tipografía</h2>
+        <div class="sys-block">
+          <p style="font-family:var(--font-display);font-style:italic;font-size:var(--fs-display);line-height:.95">Display</p>
+          <p class="section-head__title">Título de sección</p>
+          <p style="font-size:var(--fs-h3);font-weight:600">Subtítulo h3</p>
+          <p>Texto de cuerpo en Hanken Grotesk, pensado para lectura cómoda de descripciones de prenda.</p>
+          <p style="font-size:var(--fs-small)">Texto pequeño para notas.</p>
+          <p class="eyebrow">Etiqueta en mayúsculas</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="s-btn">
+      <div class="container">
+        <h2 class="section-head__title" id="s-btn" style="margin-bottom:var(--sp-6)">Botones y etiquetas</h2>
+        <div class="sys-block"><h3>Botones</h3>
+          <div class="sys-row">
+            <a class="btn" href="#s-btn">Primario</a>
+            <a class="btn btn--secondary" href="#s-btn">Secundario</a>
+            <a class="btn btn--ghost" href="#s-btn">Fantasma</a>
+            <a class="btn btn--sm" href="#s-btn">Pequeño</a>
+            <a class="btn" aria-disabled="true">Sin destino</a>
+          </div></div>
+        <div class="sys-block"><h3>Disponibilidad</h3>
+          <div class="sys-row"><span class="tag tag--ok">Disponible</span><span class="tag tag--low">Pocas unidades</span><span class="tag tag--out">Agotado</span></div></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s-card">
+      <div class="container">
+        <h2 class="section-head__title" id="s-card" style="margin-bottom:var(--sp-6)">Tarjeta de producto</h2>
+        <ul class="product-grid">
+          <li class="card card--demo">
+            <div class="card__media"><div class="card__ph">Foto pendiente</div><span class="card__tag tag tag--ok">Disponible</span></div>
+            <div class="card__body"><p class="card__brand">Marca de ejemplo</p><h3 class="card__title"><a class="card__link" href="#s-card">Producto de ejemplo</a></h3><p class="card__price">$00.000</p>
+              <div class="card__colors" aria-hidden="true"><i class="card__dot" data-color="#000000"></i><i class="card__dot" data-color="#E8E5E7"></i></div></div>
+          </li>
+          <li class="card card--demo">
+            <div class="card__media"><div class="card__ph">Foto pendiente</div><span class="card__tag tag tag--low">Pocas unidades</span></div>
+            <div class="card__body"><p class="card__brand">Marca de ejemplo</p><h3 class="card__title"><a class="card__link" href="#s-card">Producto de ejemplo</a></h3><p class="card__price">$00.000</p></div>
+          </li>
+          <li class="card card--demo card--soldout">
+            <div class="card__media"><div class="card__ph">Foto pendiente</div><span class="card__tag tag tag--out">Agotado</span></div>
+            <div class="card__body"><p class="card__brand">Marca de ejemplo</p><h3 class="card__title"><a class="card__link" href="#s-card">Producto de ejemplo</a></h3><p class="card__price">$00.000</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="s-var">
+      <div class="container">
+        <h2 class="section-head__title" id="s-var" style="margin-bottom:var(--sp-6)">Variantes y cantidad</h2>
+        <div class="sys-block">
+          <fieldset class="field" data-field>
+            <legend class="field__legend">Talla <output aria-live="polite"></output></legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="talla" value="S" data-label="S" checked><span class="chip">S</span></label>
+              <label class="opt"><input type="radio" name="talla" value="M" data-label="M"><span class="chip">M</span></label>
+              <label class="opt"><input type="radio" name="talla" value="L" data-label="L"><span class="chip">L</span></label>
+              <label class="opt"><input type="radio" name="talla" value="XL" data-label="XL (agotada)" disabled><span class="chip">XL</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="field" data-field>
+            <legend class="field__legend">Color <output aria-live="polite"></output></legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="color" value="a" data-label="Color de ejemplo A" checked><span class="swatch" data-color="#000000"></span></label>
+              <label class="opt"><input type="radio" name="color" value="b" data-label="Color de ejemplo B"><span class="swatch" data-color="#E8E5E7"></span></label>
+              <label class="opt"><input type="radio" name="color" value="c" data-label="Color de ejemplo C (agotado)" disabled><span class="swatch" data-color="#F653BD"></span></label>
+            </div>
+          </fieldset>
+          <div class="field"><span class="field__legend" id="q-l">Cantidad</span>
+            <div class="qty" role="group" aria-labelledby="q-l" data-qty data-max="5">
+              <button type="button" class="qty__btn" data-dec aria-label="Disminuir cantidad">−</button>
+              <output class="qty__val" aria-live="polite">1</output>
+              <button type="button" class="qty__btn" data-inc aria-label="Aumentar cantidad">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s-msg">
+      <div class="container">
+        <h2 class="section-head__title" id="s-msg" style="margin-bottom:var(--sp-6)">Mensajes y estados vacíos</h2>
+        <div class="sys-block">
+          <div class="notice" role="status"><div><span class="notice__title">Información</span><p>Mensaje informativo de ejemplo.</p></div></div>
+          <div class="notice notice--success" role="status"><div><span class="notice__title">Confirmación</span><p>Mensaje de éxito de ejemplo.</p></div></div>
+          <div class="notice notice--warning" role="status"><div><span class="notice__title">Atención</span><p>Mensaje de advertencia de ejemplo.</p></div></div>
+          <div class="notice notice--error" role="alert"><div><span class="notice__title">Error</span><p>Mensaje de error de ejemplo.</p></div></div>
+          <div class="empty"><p class="empty__title">Estado vacío</p><p class="empty__text">Texto que explica con honestidad por qué no hay contenido.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <img class="site-footer__logo" src="assets/brand/logo-hm-boutique-recortado.png" alt="HM Boutique" width="366" height="295">
+      <p class="site-footer__note">© HM Boutique</p>
+    </div>
+  </footer>
+  <script src="js/ui.js"></script>
+</body>
+</html>
